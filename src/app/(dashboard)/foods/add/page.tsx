@@ -1,12 +1,13 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { tr } from '@/lib/strings';
 import AddFoodForm from '@/components/foods/AddFoodForm';
 
-export default function AddFoodPage() {
+function AddFoodContent() {
   const searchParams = useSearchParams();
   const prefillName = searchParams.get('name') || '';
   const router = useRouter();
@@ -32,5 +33,13 @@ export default function AddFoodPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function AddFoodPage() {
+  return (
+    <Suspense fallback={<div className="p-4">{tr.common.loading}</div>}>
+      <AddFoodContent />
+    </Suspense>
   );
 }
