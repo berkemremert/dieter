@@ -96,6 +96,7 @@ export const tr = {
     addDish: 'Tarif / Yemek Ekle',
     editFood: 'Yiyeceği Düzenle',
     deleteFood: 'Yiyeceği Sil',
+    deleteConfirm: 'Bu yiyeceği silmek istediğinize emin misiniz?',
     notFound: 'Bulamadın mı?',
     notFoundCta: 'Buradan ekle →',
     category: 'Kategori',
